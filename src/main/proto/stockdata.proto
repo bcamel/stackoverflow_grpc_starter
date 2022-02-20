@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.so.grpc";
+option java_outer_classname = "StockDataProto";
+
+package stockdata;
+
+message Security {
+  string tickerSymbol = 1;
+  string security = 2;
+  string secFilings = 3;
+  string gicsSector = 4;
+  string gicsSubIndustry = 5;
+  string addressHq = 6;
+  int64 dateFirstAdded = 7;
+  string cik = 8;
+}
+
+
+

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "stockdata.proto";
+
+option java_multiple_files = true;
+option java_package = "com.example.so.grpc";
+option java_outer_classname = "StockDataServicesProto";
+
+package stockdata;
+
+message StockStaticDataRequest {
+  string tickerSymbol = 1;
+}
+
+
+message StockStaticManyDataRequest {
+  repeated string tickerSymbols = 1;
+}
+
+
+service StockStaticDataRequestService {
+  rpc getStockStatics(StockStaticDataRequest) returns (Security);
+  rpc getManyStockStatics(StockStaticManyDataRequest) returns (stream Security) {}
+
+}

@@ -1,0 +1,12 @@
+spring:
+  main:
+    banner-mode: off
+
+grpc:
+  client:
+    stocks:
+      address: 'static://localhost:9091'
+      enableKeepAlive: false
+      negotiationType: plaintext
+  server:
+    port: 9092
